@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8" />
@@ -16,14 +16,19 @@
 
     <header class="nav">
         <div class="logo">Waller</div>
-        <button class="menu-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <div style="display: flex; align-items: center; gap: 16px;">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon">🌙</span>
+            </button>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
         <nav class="nav-menu">
             <a href="#features">Features</a>
-            <a href="#screenshots">Screenshots</a>
+            <a href="#gallery">Gallery</a>
             <a href="#opensource">Open Source</a>
             <a href="#download">Download</a>
             <a href="donate.html">Donate</a>
@@ -94,25 +99,25 @@
         </div>
     </section>
 
-    <section id="screenshots" class="section muted">
+    <section id="gallery" class="section muted">
         <h2 class="center">See Waller in Action</h2>
         <p class="center">
             Beautiful gradient wallpapers with sophisticated effects.
             Preview variations, customize colors, and apply directly to your homescreen.
         </p>
 
-        <div class="screenshot-grid">
-            <div class="screenshot-card">
-                <img src="assets/images/screenshot-1.png" alt="Waller Home Screen" />
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="assets/images/gallery-1.png" alt="Waller Home Screen" />
             </div>
-            <div class="screenshot-card">
-                <img src="assets/images/screenshot-2.png" alt="Waller Gradient Preview" />
+            <div class="gallery-card">
+                <img src="assets/images/gallery-2.png" alt="Waller Gradient Preview" />
             </div>
-            <div class="screenshot-card">
-                <img src="assets/images/screenshot-3.png" alt="Waller Color Picker" />
+            <div class="gallery-card">
+                <img src="assets/images/gallery-3.png" alt="Waller Color Picker" />
             </div>
-            <div class="screenshot-card">
-                <img src="assets/images/screenshot-4.png" alt="Waller Effects" />
+            <div class="gallery-card">
+                <img src="assets/images/gallery-4.png" alt="Waller Effects" />
             </div>
         </div>
     </section>
@@ -184,17 +189,20 @@
 
         <div class="center"
             style="margin-top: 56px; display: flex; flex-direction: column; gap: 20px; align-items: center;">
-            <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-                <a class="btn-primary" href="https://github.com/Pankaj-Meharchandani/waller/releases" target="_blank"
-                    rel="noopener noreferrer">
+            <div class="store-buttons-container">
+                <a class="store-button" href="https://github.com/Pankaj-Meharchandani/waller/releases" target="_blank"
+                    rel="noopener noreferrer" style="background: linear-gradient(135deg, #333 0%, #000 100%);">
+                    <img src="assets/images/github-logo.svg" alt="GitHub">
                     GitHub Releases
                 </a>
-                <a class="btn-primary" href="https://github.com/jpdoshi/dragon-store" target="_blank"
-                    rel="noopener noreferrer" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                <a class="store-button" href="https://github.com/jpdoshi/dragon-store" target="_blank"
+                    rel="noopener noreferrer" style="background: linear-gradient(135deg, #ff2056 0%, #231f20 100%);">
+                    <img src="assets/images/dragon-logo.svg" alt="Dragon Store">
                     Dragon Store
                 </a>
-                <a class="btn-primary" href="https://github.com/RookieEnough/Orion-Store" target="_blank"
-                    rel="noopener noreferrer" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <a class="store-button" href="https://github.com/RookieEnough/Orion-Store" target="_blank"
+                    rel="noopener noreferrer" style="background: linear-gradient(135deg, #5c5ce9 0%, #3a3ae9 100%);">
+                    <img src="assets/images/orion-logo.svg" alt="Orion Store">
                     Orion Store
                 </a>
             </div>
@@ -267,6 +275,25 @@
                 menuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
             }
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme preference or default to 'dark'
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        htmlElement.setAttribute('data-theme', currentTheme);
+        themeIcon.textContent = currentTheme === 'light' ? '🌙' : '☀️';
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeIcon.textContent = newTheme === 'light' ? '🌙' : '☀️';
         });
     </script>
 
