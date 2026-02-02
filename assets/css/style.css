@@ -1,38 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --bg-deep: #000000;
-    --bg-layer: #0a0a0f;
-    --bg-card: rgba(15, 15, 25, 0.6);
+    --bg-deep: #0a0515;
+    --bg-layer: #12081f;
+    --bg-card: rgba(18, 8, 31, 0.6);
 
     --text-primary: #ffffff;
-    --text-secondary: #a8a8b8;
-    --text-muted: #6b6b7b;
+    --text-secondary: #b8b0c8;
+    --text-muted: #7d7290;
 
-    /* Signature gradient system */
-    --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-    --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-    --gradient-6: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    /* Signature gradient system - matching logo colors */
+    --gradient-1: linear-gradient(135deg, #4a90e2 0%, #2e5299 100%);
+    --gradient-2: linear-gradient(135deg, #a569bd 0%, #6b3fa0 100%);
+    --gradient-3: linear-gradient(135deg, #5dade2 0%, #3498db 100%);
+    --gradient-4: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    --gradient-5: linear-gradient(135deg, #ec7063 0%, #c0392b 100%);
+    --gradient-6: linear-gradient(135deg, #f5b7b1 0%, #d98880 100%);
 
-    /* Mega gradients */
+    /* Mega gradients - inspired by logo */
     --mega-gradient: linear-gradient(135deg,
-            #667eea 0%,
-            #764ba2 25%,
-            #f093fb 50%,
-            #f5576c 75%,
-            #4facfe 100%);
+            #5dade2 0%,
+            #3498db 15%,
+            #2e5299 30%,
+            #a569bd 50%,
+            #6b3fa0 65%,
+            #f39c12 80%,
+            #ec7063 100%);
 
     --hero-glow: radial-gradient(ellipse 1400px 800px at 50% -10%,
-            rgba(102, 126, 234, 0.15),
+            rgba(93, 173, 226, 0.15),
             transparent 50%),
         radial-gradient(ellipse 1000px 600px at 80% 20%,
-            rgba(240, 147, 251, 0.12),
+            rgba(165, 105, 189, 0.12),
             transparent 50%),
         radial-gradient(ellipse 1200px 700px at 20% 30%,
-            rgba(79, 172, 254, 0.1),
+            rgba(243, 156, 18, 0.1),
             transparent 50%);
 
     --glass-bg: rgba(255, 255, 255, 0.03);
@@ -159,7 +161,7 @@ body::before {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--gradient-3);
+    background: linear-gradient(90deg, #5dade2, #a569bd);
     transition: width 0.3s ease;
 }
 
@@ -223,7 +225,7 @@ body::before {
     left: -20%;
     width: 800px;
     height: 800px;
-    background: var(--gradient-1);
+    background: linear-gradient(135deg, #5dade2, #3498db);
     border-radius: 50%;
     filter: blur(120px);
     opacity: 0.15;
@@ -237,7 +239,7 @@ body::before {
     right: -10%;
     width: 600px;
     height: 600px;
-    background: var(--gradient-3);
+    background: linear-gradient(135deg, #a569bd, #6b3fa0);
     border-radius: 50%;
     filter: blur(100px);
     opacity: 0.12;
@@ -333,7 +335,7 @@ body::before {
     box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.1),
         0 50px 100px rgba(0, 0, 0, 0.5),
-        0 0 200px rgba(102, 126, 234, 0.3);
+        0 0 200px rgba(93, 173, 226, 0.3);
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -342,7 +344,7 @@ body::before {
     box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.15),
         0 60px 120px rgba(0, 0, 0, 0.6),
-        0 0 250px rgba(102, 126, 234, 0.4);
+        0 0 250px rgba(93, 173, 226, 0.4);
 }
 
 /* ---------------- BADGES ---------------- */
@@ -364,15 +366,15 @@ body::before {
 }
 
 .badge-opensource {
-    background: linear-gradient(135deg, rgba(67, 233, 123, 0.1), rgba(56, 249, 215, 0.1));
-    border-color: rgba(67, 233, 123, 0.2);
-    color: #43e97b;
+    background: linear-gradient(135deg, rgba(93, 173, 226, 0.15), rgba(52, 152, 219, 0.15));
+    border-color: rgba(93, 173, 226, 0.3);
+    color: #5dade2;
 }
 
 .badge-gpl {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-    border-color: rgba(102, 126, 234, 0.2);
-    color: #667eea;
+    background: linear-gradient(135deg, rgba(165, 105, 189, 0.15), rgba(107, 63, 160, 0.15));
+    border-color: rgba(165, 105, 189, 0.3);
+    color: #a569bd;
 }
 
 /* ---------------- BUTTONS ---------------- */
@@ -390,7 +392,7 @@ body::before {
     text-decoration: none;
     box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.1),
-        0 20px 60px rgba(102, 126, 234, 0.4);
+        0 20px 60px rgba(93, 173, 226, 0.4);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -419,7 +421,7 @@ body::before {
     transform: translateY(-3px);
     box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.2),
-        0 25px 80px rgba(102, 126, 234, 0.6);
+        0 25px 80px rgba(93, 173, 226, 0.6);
 }
 
 .btn-primary:active {
@@ -545,7 +547,7 @@ body::before {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(102, 126, 234, 0.1), transparent);
+    background: radial-gradient(circle, rgba(93, 173, 226, 0.1), transparent);
     transform: translate(-50%, -50%);
     transition: width 0.6s ease, height 0.6s ease;
     pointer-events: none;
@@ -619,7 +621,7 @@ body::before {
     box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.1),
         0 40px 100px rgba(0, 0, 0, 0.5),
-        0 0 150px rgba(102, 126, 234, 0.2);
+        0 0 150px rgba(93, 173, 226, 0.2);
 }
 
 .screenshot-card:hover img {
@@ -631,7 +633,7 @@ body::before {
 .muted {
     background:
         radial-gradient(ellipse 1000px 500px at 50% 0%,
-            rgba(118, 75, 162, 0.08),
+            rgba(165, 105, 189, 0.08),
             transparent 60%),
         var(--bg-layer);
     position: relative;
@@ -660,7 +662,7 @@ body::before {
     box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.08),
         0 40px 120px rgba(0, 0, 0, 0.5),
-        0 0 300px rgba(118, 75, 162, 0.2);
+        0 0 300px rgba(165, 105, 189, 0.2);
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -669,7 +671,7 @@ body::before {
     box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.12),
         0 50px 140px rgba(0, 0, 0, 0.6),
-        0 0 350px rgba(118, 75, 162, 0.3);
+        0 0 350px rgba(165, 105, 189, 0.3);
 }
 
 /* ---------------- FOOTER ---------------- */
@@ -682,7 +684,7 @@ body::before {
     background:
         linear-gradient(to bottom, transparent, var(--bg-deep)),
         radial-gradient(ellipse 800px 400px at 50% 100%,
-            rgba(102, 126, 234, 0.05),
+            rgba(165, 105, 189, 0.05),
             transparent);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -705,7 +707,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 1px;
-    background: var(--gradient-3);
+    background: linear-gradient(90deg, #5dade2, #a569bd);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -873,22 +875,22 @@ body::before {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #5dade2, #a569bd);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #764ba2, #667eea);
+    background: linear-gradient(135deg, #a569bd, #5dade2);
 }
 
 /* ---------------- SELECTION ---------------- */
 
 ::selection {
-    background: rgba(102, 126, 234, 0.3);
+    background: rgba(93, 173, 226, 0.3);
     color: var(--text-primary);
 }
 
 ::-moz-selection {
-    background: rgba(102, 126, 234, 0.3);
+    background: rgba(93, 173, 226, 0.3);
     color: var(--text-primary);
 }
