@@ -4,6 +4,7 @@
     --bg-deep: #0a0515;
     --bg-layer: #12081f;
     --bg-card: rgba(18, 8, 31, 0.6);
+    --nav-bg: rgba(10, 5, 21, 0.95);
 
     --text-primary: #ffffff;
     --text-secondary: #b8b0c8;
@@ -47,6 +48,7 @@
     --bg-deep: #fcdfcb;
     --bg-layer: #fef3ec;
     --bg-card: rgba(254, 243, 236, 0.7);
+    --nav-bg: rgba(254, 243, 236, 0.95);
 
     --text-primary: #1a1a1a;
     --text-secondary: #4a4a4a;
@@ -111,8 +113,6 @@ body::before {
     justify-content: space-between;
     align-items: center;
     padding: 24px 64px;
-    background: var(--nav-bg);
-
     backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     z-index: 1000;
@@ -165,7 +165,6 @@ body::before {
 .nav-menu {
     display: flex;
     gap: 40px;
-    --nav-bg: rgba(245, 217, 209, 0.95);
 }
 
 .nav-menu a {
@@ -175,6 +174,9 @@ body::before {
     font-weight: 500;
     position: relative;
     transition: color 0.3s ease;
+    padding: 0;
+    background: none;
+    border-radius: 0;
 }
 
 .nav-menu a::after {
@@ -190,6 +192,7 @@ body::before {
 
 .nav-menu a:hover {
     color: var(--text-primary);
+    background: none;
 }
 
 .nav-menu a:hover::after {
@@ -873,9 +876,11 @@ body::before {
         width: 100%;
         max-width: 300px;
         height: calc(100vh - 73px);
-        background: rgba(10, 5, 21, 0.95);
+        background: var(--nav-bg);
         backdrop-filter: blur(40px) saturate(180%);
         border-left: 1px solid rgba(255, 255, 255, 0.15);
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
         box-shadow: -10px 0 60px rgba(0, 0, 0, 0.8),
             inset 0 0 100px rgba(93, 173, 226, 0.05);
         flex-direction: column;
@@ -1076,6 +1081,8 @@ body::before {
 [data-theme="light"] .nav-menu {
     background: var(--nav-bg);
     border-left: 1px solid rgba(15, 23, 42, 0.12);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     box-shadow: -12px 0 40px rgba(15, 23, 42, 0.18),
         inset 0 0 60px rgba(255, 255, 255, 0.6);
 }
