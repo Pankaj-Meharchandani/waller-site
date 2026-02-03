@@ -111,7 +111,8 @@ body::before {
     justify-content: space-between;
     align-items: center;
     padding: 24px 64px;
-    background: rgba(0, 0, 0, 0.4);
+    background: var(--nav-bg);
+
     backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     z-index: 1000;
@@ -164,6 +165,7 @@ body::before {
 .nav-menu {
     display: flex;
     gap: 40px;
+    --nav-bg: rgba(245, 217, 209, 0.95);
 }
 
 .nav-menu a {
@@ -1072,11 +1074,20 @@ body::before {
 
 /* Light theme mobile nav */
 [data-theme="light"] .nav-menu {
-    background: linear-gradient(135deg,
-            rgba(125, 211, 252, 0.3) 0%,
-            rgba(168, 85, 247, 0.25) 50%,
-            rgba(251, 146, 60, 0.3) 100%);
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    background: var(--nav-bg);
+    border-left: 1px solid rgba(15, 23, 42, 0.12);
+    box-shadow: -12px 0 40px rgba(15, 23, 42, 0.18),
+        inset 0 0 60px rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="light"] .nav-menu a {
+    color: #1f2933;
+    border-bottom-color: rgba(15, 23, 42, 0.12);
+}
+
+[data-theme="light"] .nav-menu a:hover {
+    background: rgba(59, 130, 246, 0.12);
+    border-bottom-color: rgba(59, 130, 246, 0.25);
 }
 
 /* Light theme heading and text fixes */
